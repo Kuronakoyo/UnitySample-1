@@ -50,7 +50,11 @@ public class marioView : MonoBehaviour
                 InitStand();
             else if (UnitMode.Walk == unitmode)
                 InitWalk();
-        } 
+        }
+        get
+        {
+            return UMode;
+        }
     }
     //キャラクターの向き
     private int direction = 1;
