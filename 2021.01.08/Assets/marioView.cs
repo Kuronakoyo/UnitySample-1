@@ -58,7 +58,7 @@ public class marioView : MonoBehaviour
     }
     //キャラクターの向き
     private int direction = 1;
-    public int Direction { set { direction = value; } }
+    public int Direction { set { direction = value; SetDrection(); } }
 
 
     // Update is called once per frame
@@ -152,4 +152,9 @@ public class marioView : MonoBehaviour
             GetComponent<Image>().sprite = marioImage[walkTable[walkActionNum]];
         }
     }
-}
+
+    private void SetDrection()
+    {
+        GetComponent<RectTransform>().localScale = new Vector2(direction, 1);
+    }
+}  
